@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <title>Chart Generator</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Chart Generator</h1>
+        <div class="chart-options">
+            <label for="chartType">Select Chart Type:</label>
+            <select id="chartType">
+                <option value="bar">Bar Chart</option>
+                <option value="line">Line Chart</option>
+                <option value="pie">Pie Chart</option>
+            </select>
+        </div>
+        <div class="data-input">
+            <label for="dataInput">Enter Data</label>
+            <input type="text" id="dataInput" placeholder="e.g., 10,20,30">
+        </div>
+        <button onclick="generateChart()">Generate Chart</button>
+        <div class="chart-container" id="chartContainer"></div>
+        <div class="error-message" id="errorMessage"></div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
